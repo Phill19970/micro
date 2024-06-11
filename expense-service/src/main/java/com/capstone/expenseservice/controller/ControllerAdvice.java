@@ -13,11 +13,6 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Javaughn Stephenson
- * @since 11/07/2023
- */
-
 @RestControllerAdvice
 public class ControllerAdvice {
 

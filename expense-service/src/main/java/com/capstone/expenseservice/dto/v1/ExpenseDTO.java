@@ -10,11 +10,6 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-/**
- * @author Javaughn Stephenson
- * @since 22/06/2023
- */
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

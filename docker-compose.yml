@@ -238,7 +238,7 @@ services:
       retries: 4
 
     environment:
-      EMAIL: javaughn1075@gmail.com
+      EMAIL: kharief4u@gmail.com
       PASSWORD: hllhkezkynqjxvro
 
     ports:

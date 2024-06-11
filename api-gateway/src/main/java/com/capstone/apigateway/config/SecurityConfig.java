@@ -14,11 +14,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * @author Javaughn Stephenson
- * @since 08/08/2023
- */
-
 @Configuration
 @EnableWebFluxSecurity
 public class SecurityConfig {

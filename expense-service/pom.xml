@@ -12,7 +12,7 @@
 	<artifactId>expense-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>expense-service</name>
-	<description>Capstone Project for Javaughn Stephenson</description>
+	<description>Hospital Management System</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>

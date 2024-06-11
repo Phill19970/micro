@@ -8,11 +8,6 @@ import org.springframework.http.HttpStatus;
 
 import java.time.LocalTime;
 
-/**
- * @author Javaughn Stephenson
- * @since 11/07/2023
- */
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -17,10 +17,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * @author Javaughn Stephenson
- * @since 22/06/2023
- */
 
 @Service
 @Slf4j

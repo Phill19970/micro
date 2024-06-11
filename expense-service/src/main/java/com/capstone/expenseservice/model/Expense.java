@@ -18,12 +18,6 @@ import java.util.UUID;
 
 import static com.capstone.expenseservice.util.UpdateUtil.updateHelper;
 
-
-/**
- * @author Javaughn Stephenson
- * @since 15/06/2023
- */
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
