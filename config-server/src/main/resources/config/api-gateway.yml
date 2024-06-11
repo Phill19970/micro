@@ -1,0 +1,44 @@
+server:
+  port: 9000
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry-service:8761/eureka/
+
+okta:
+  oauth2:
+    issuer: https://dev-21108441.okta.com/oauth2/default
+    clientId: 0oaaoqvokauMiS7dW5d7
+    clientSecret: eM3xqDXzvlMeYQauObPtF0cqy_tabiGR3DcKOorMzweFiridO3r4GNsFNopoQUzi
+
+
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/patients/**, /api/v1/doctors/**
+
+        - id: appointment-service
+          uri: lb://appointment-service
+          predicates:
+            - Path=/api/v1/appointments/**
+
+        - id: expense-service
+          uri: lb://expense-service
+          predicates:
+            - Path=/api/v1/expenses/**
+
+        - id: medical-record-service
+          uri: lb://medical-record-service
+          predicates:
+            - Path=/api/v1/medical-record/**

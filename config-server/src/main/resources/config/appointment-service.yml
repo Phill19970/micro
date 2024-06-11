@@ -1,0 +1,38 @@
+server:
+  port: 8083
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry-service:8761/eureka/
+
+okta:
+  oauth2:
+    issuer: https://dev-21108441.okta.com/oauth2/default
+    clientId: 0oaaoqvokauMiS7dW5d7
+    clientSecret: eM3xqDXzvlMeYQauObPtF0cqy_tabiGR3DcKOorMzweFiridO3r4GNsFNopoQUzi
+
+spring:
+  datasource:
+    url: jdbc:postgresql://appointment-db:5432/appointment
+    username: appointment
+    password: capstone
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+
+
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
+
+flyway:
+  locations: classpath:db/migration
