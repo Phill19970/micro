@@ -5,6 +5,10 @@ import com.capstone.expenseservice.model.Expense;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+/**
+ * @author Javaughn Stephenson
+ * @since 22/06/2023
+ */
 
 @Mapper(componentModel = "spring")
 public interface ExpenseMapper {

@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author Javaughn Stephenson
+ * @since 15/06/2023
+ */
 
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, UUID> {

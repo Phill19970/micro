@@ -7,6 +7,11 @@ import org.springframework.http.HttpStatus;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author Javaughn Stephenson
+ * @since 22/06/2023
+ */
+
 public interface ExpenseService {
 
     List<Expense> getPatientExpenses(String patientId);

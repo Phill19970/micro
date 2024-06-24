@@ -10,6 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * @author Javaughn Stephenson
+ * @since 18/07/2023
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity

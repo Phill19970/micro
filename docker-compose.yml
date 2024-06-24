@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 
 services:
   rabbit:
@@ -13,7 +13,7 @@ services:
     ports:
       - '5432:5432'
     healthcheck:
-      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "postgres" ]
+      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "user_service" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -30,7 +30,7 @@ services:
     ports:
       - '5433:5432'
     healthcheck:
-      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "postgres" ]
+      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "appointment" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -47,7 +47,7 @@ services:
     ports:
       - '5435:5432'
     healthcheck:
-      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "postgres" ]
+      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "expense" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -64,7 +64,7 @@ services:
     ports:
       - '5434:5432'
     healthcheck:
-      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "postgres" ]
+      test: [ "CMD", "pg_isready", "-h", "localhost", "-p", "5432", "-U", "medical-record" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -197,7 +197,7 @@ services:
       timeout: 5s
       retries: 4
     environment:
-      EMAIL: kharief4u@gmail.com
+      EMAIL: javaughn1075@gmail.com
       PASSWORD: hllhkezkynqjxvro
     ports:
       - "8085:8085"
@@ -206,35 +206,6 @@ services:
         condition: service_healthy
       registry-service:
         condition: service_healthy
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.1
-    environment:
-      - discovery.type=single-node
-    ports:
-      - "9200:9200"
-    networks:
-      - elk
-
-  logstash:
-    image: docker.elastic.co/logstash/logstash:7.10.1
-    ports:
-      - "5044:5044"
-    volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-    networks:
-      - elk
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.10.1
-    ports:
-      - "5601:5601"
-    networks:
-      - elk
-
-networks:
-  elk:
-    driver: bridge
 
 volumes:
   user_data:

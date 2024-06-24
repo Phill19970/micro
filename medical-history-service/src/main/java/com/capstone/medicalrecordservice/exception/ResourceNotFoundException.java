@@ -1,9 +1,0 @@
-package com.capstone.medicalrecordservice.exception;
-
-public class ResourceNotFoundException extends RuntimeException{
-
-    public ResourceNotFoundException(String message) {
-        super(message);
-    }
-
-}

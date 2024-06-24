@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * @author Javaughn Stephenson
+ * @since 22/06/2023
+ */
+
 @RestController
 @RequestMapping("/api/v1/expenses")
 public class ExpenseController {

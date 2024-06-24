@@ -2,6 +2,11 @@ package com.capstone.expenseservice.model;
 
 import lombok.*;
 
+/**
+ * @author Javaughn Stephenson
+ * @since 15/06/2023
+ */
+
 @Data
 @ToString(exclude = {"appointments"})
 @AllArgsConstructor
