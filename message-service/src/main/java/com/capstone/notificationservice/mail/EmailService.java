@@ -14,7 +14,6 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -32,15 +31,16 @@ public class EmailService {
         Doctor doctor = null;
         Patient patient = null;
 
-        try{
+        try {
             doctor = userClient.getDoctor(appointment.getDoctorId());
             patient = userClient.getPatient(appointment.getPatientId());
-
         } catch (Exception e) {
             log.error("Patient with id {} or doctor with id {} does not exist.", appointment.getDoctorId(), appointment.getPatientId());
-            throw new ResourceNotFoundException("Patient with id " + appointment.getPatientId() + " or doctor with id "+ appointment.getDoctorId() + " does not exist.");
+            throw new ResourceNotFoundException("Patient with id " + appointment.getPatientId() + " or doctor with id " + appointment.getDoctorId() + " does not exist.");
         }
 
+        log.info("Doctor: {}", doctor);
+        log.info("Patient: {}", patient);
 
         SimpleMailMessage doctorMail = new SimpleMailMessage();
         doctorMail.setTo(doctor.getEmail());
@@ -56,12 +56,9 @@ public class EmailService {
                 + " at " + appointment.getAppointmentDate() + " from " + appointment.getStartTime()
                 + " to " + appointment.getEndTime());
 
-
         mailSender.send(doctorMail);
         mailSender.send(patientMail);
 
-        log.info("Message Sent");
-
+        log.info("Emails sent to Doctor: {} and Patient: {}", doctor.getEmail(), patient.getEmail());
     }
-
 }

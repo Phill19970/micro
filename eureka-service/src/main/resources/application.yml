@@ -5,3 +5,9 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
